@@ -1,0 +1,9 @@
+{
+  "name": "shared",
+  "version": "0.0.0",
+  "description": "shared",
+  "license": "ISC",
+  "scripts": {
+    "test": "exit 0"
+  }
+}

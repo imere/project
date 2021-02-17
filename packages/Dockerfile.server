@@ -1,0 +1,38 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY ./shared ./packages/shared
+
+COPY ./client ./packages/client
+
+RUN cd ./packages/shared && \
+    npm install
+
+RUN cd ./packages/client && \
+    npm install
+
+RUN cd ./packages/client && \
+    npm run build
+
+
+FROM node:alpine
+
+WORKDIR /app
+
+COPY ./shared ./packages/shared
+
+COPY ./server ./packages/server
+
+RUN cd ./packages/shared && \
+    npm install
+
+RUN cd ./packages/server && \
+    npm install
+
+RUN cd ./packages/server && \
+    npm run build
+
+COPY --from=0 /app/packages/client/dist ./packages/server/dist/client
+
+CMD cd ./packages/server && npm start

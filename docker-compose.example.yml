@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  session:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    networks:
+      - frontend
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  server:
+    build:
+      context: ./packages
+      dockerfile: Dockerfile.server
+    environment:
+      - NODE_ENV=production
+      - HOST=0.0.0.0
+      - PORT=80
+      - DB_MONGO=mongodb+srv://USER:PASS@cluster/db?retryWrites=true&w=majority
+      - SESSION_REDIS_HOST=session
+      - SESSION_REDIS_PORT=6379
+    ports:
+      - 80:80
+    networks:
+      - frontend
+    depends_on:
+      - session
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+networks:
+  frontend:

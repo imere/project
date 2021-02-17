@@ -1,0 +1,5 @@
+import { render } from 'react-dom';
+import { App } from './App';
+import './styles/global.css';
+
+render(<App />, document.getElementById('__root'));

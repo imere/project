@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es5",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "declaration": false,
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "@packages/client/*": [
+        "./src/*"
+      ],
+      "@packages/server/*": [
+        "../../packages/server/src/*"
+      ],
+      "@packages/shared/*": [
+        "../../packages/shared/src/*"
+      ]
+    },
+    "pretty": true,
+    "jsx": "react-jsx",
+    "module": "es6",
+    "skipDefaultLibCheck": true,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "**/*spec.ts"
+  ]
+}
