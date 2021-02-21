@@ -1,6 +1,6 @@
 export default {
   /** excludes path */
-  excludes: [/services/],
+  excludes: [/coverage$/, /services$/],
   /** TODO: override strategies */
   strategies: {},
   packages: {
@@ -48,13 +48,14 @@ export default {
         {
           compilerOptions: {
             module: 'commonjs',
-            emitDecoratorMetadata: false,
+            declaration: true,
             target: 'es2017',
             sourceMap: false,
-            outDir: './dist',
-            incremental: true,
             moduleResolution: 'node',
             baseUrl: './',
+            outDir: './dist',
+            emitDecoratorMetadata: false,
+            incremental: true,
           },
         },
       ],

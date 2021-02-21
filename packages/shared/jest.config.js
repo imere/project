@@ -16,7 +16,7 @@ module.exports = {
   collectCoverageFrom: [
     '**/*.(t|j)s',
   ],
-  coverageDirectory: '../coverage/server',
+  coverageDirectory: '../coverage/shared',
   testEnvironment: 'node',
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
 };

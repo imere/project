@@ -19,7 +19,7 @@ services:
       - NODE_ENV=production
       - HOST=0.0.0.0
       - PORT=80
-      - DB_MONGO=mongodb+srv://USER:PASS@cluster/db?retryWrites=true&w=majority
+      - DB_MONGO=mongodb+srv://<USER>:<PASS>@cluster/<db>?retryWrites=true&w=majority
       - SESSION_REDIS_HOST=session
       - SESSION_REDIS_PORT=6379
     ports:

@@ -1,3 +1,5 @@
+import { ApiProperty } from '@nestjs/swagger';
+
 interface BaseResponse {
   code: number
   text?: string
@@ -14,21 +16,33 @@ export interface ErrorResponse extends BaseResponse {
 export type ServerResponse<T = unknown> = SuccessResponse<T> & ErrorResponse
 
 export function isSuccessResponse<T>(data?: unknown): data is SuccessResponse<T> {
-  if (!data) return false;
+  if ((<SuccessResponse<T>>data)?.code < 400) return true;
 
-  if ((<SuccessResponse<T>>data).code < 400) return true;
-  else return false;
+  return false;
 }
 
 export function isErrorResponse(data?: unknown): data is ErrorResponse {
-  if (!data) return false;
+  if ((<ErrorResponse>data)?.code >= 400) return true;
 
-  if ((<ErrorResponse>data).code >= 400) return true;
-  else return false;
+  return false;
 }
 
-export class Response {
-  static build<T>(
+export class ResponseShape implements SuccessResponse, ErrorResponse {
+  @ApiProperty()
+  code!: number
+
+  @ApiProperty()
+  text?: string
+
+  @ApiProperty()
+  data?: unknown
+
+  @ApiProperty()
+  msg?: string
+}
+
+export class ResponseBuilder {
+  static create<T>(
     data: SuccessResponse<T>['data'],
     params: Omit<ServerResponse<T>, 'data'> = { code: 200 }
   ): ServerResponse<T> {

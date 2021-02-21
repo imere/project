@@ -1,9 +1,60 @@
-export interface CreateUser {
-  username: string;
+import { IsEmail, IsOptional, IsString, ValidateIf } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { isNullOrUndef } from '../../util/object';
 
-  password: string;
+export class CreateUserDto {
+  @ApiProperty()
+  @IsString()
+  username!: string;
+
+  @ApiProperty()
+  @IsString()
+  password!: string;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsEmail()
+  @IsOptional()
+  email?: string
 }
 
-export type FindUser = CreateUser;
+export class UpdateUserDto {
+  @ApiProperty({
+    required: false,
+  })
+  @IsString()
+  @IsOptional()
+  password?: string
 
-export type LoginUser = CreateUser;
+  @ApiProperty({
+    required: false,
+  })
+  @IsEmail()
+  @IsOptional()
+  email?: string
+}
+
+export class FindUserDto extends CreateUserDto {}
+
+export class LoginUserDto {
+  @ApiProperty({
+    required: false,
+  })
+  @IsString()
+  @IsOptional()
+  @ValidateIf(o => isNullOrUndef(o.email))
+  username?: string;
+
+  @ApiProperty()
+  @IsString()
+  password!: string;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsEmail()
+  @IsOptional()
+  @ValidateIf(o => isNullOrUndef(o.username))
+  email?: string;
+}

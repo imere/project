@@ -1,4 +1,4 @@
-import { Time } from '@packages/shared/util/time';
+import { UTC } from '@packages/shared/util/time';
 import ErrorBoundary from './components/ErrorBoundary';
 
 export function App(): JSX.Element {
@@ -6,7 +6,7 @@ export function App(): JSX.Element {
     <ErrorBoundary>
       <div>
         APP
-        <p>{Time.UTC_MILLIS()}</p>
+        <p>{UTC.MILLIS()}</p>
         <button className="btn">button</button>
       </div>
     </ErrorBoundary>

@@ -4,6 +4,7 @@ import { PostModule } from './post/post.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { MongooseModule } from '@nestjs/mongoose';
 import { join } from 'path';
+import { AuthModule } from './auth/auth.module';
 import env from './util/env';
 
 @Module({
@@ -15,7 +16,9 @@ import env from './util/env';
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
+      useFindAndModify: false,
     }),
+    AuthModule,
     UserModule,
     PostModule,
   ],
