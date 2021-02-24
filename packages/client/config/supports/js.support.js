@@ -80,7 +80,7 @@ export default function jsSupport(...options) {
      * @returns {import("webpack").Configuration}
      */
     function (chain, args) {
-      if (chain.module.rules.has(jsSupport.name)) return chain.toConfig()
+      if (chain.module.rules.has(jsSupport.name)) return chain.toConfig();
 
       babelImpl(options, chain, args);
 
