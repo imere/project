@@ -1,3 +1,5 @@
+import * as path from 'path';
+
 const {
   HOST,
   PORT,
@@ -15,6 +17,12 @@ export default {
       jwt: 'jwtsecret',
       session: 'cab98d7bfca9e7bed09aef',
       passphrase: 'top secret',
+    },
+    rsa: {
+      path: {
+        public: path.join(__dirname, '..', 'pubKey.pem'),
+        private: path.join(__dirname, '..', 'priKey.pem'),
+      },
     },
   },
   session: {

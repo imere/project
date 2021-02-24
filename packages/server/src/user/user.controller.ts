@@ -16,7 +16,7 @@ import {
 import {
   ResponseBuilder,
   ServerResponse,
-} from '@packages/shared/design/types';
+} from '@packages/shared/design/types/response';
 import {
   CreateUserDto,
   UpdateUserDto,
@@ -66,8 +66,8 @@ export class UserController {
   @UseGuards(SessionGuard)
   @Delete()
   @HttpCode(204)
-  async remove(@Req() req: Request, @Session() session: Request['session']): Promise<void> {
+  async remove(@Req() req: Request, @Session() session: NonNullable<Request['session']>): Promise<void> {
     await this.userService.removeById(String(req.user._id));
-    session?.destroy(() => undefined);
+    session.destroy(() => undefined);
   }
 }

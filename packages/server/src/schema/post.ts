@@ -1,4 +1,3 @@
-import { TextEngine } from '@packages/shared/design/types/presentation';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { Document } from 'mongoose';

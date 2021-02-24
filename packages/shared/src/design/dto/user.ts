@@ -11,25 +11,19 @@ export class CreateUserDto {
   @IsString()
   password!: string;
 
-  @ApiProperty({
-    required: false,
-  })
+  @ApiProperty({ required: false })
   @IsEmail()
   @IsOptional()
   email?: string
 }
 
 export class UpdateUserDto {
-  @ApiProperty({
-    required: false,
-  })
+  @ApiProperty({ required: false })
   @IsString()
   @IsOptional()
   password?: string
 
-  @ApiProperty({
-    required: false,
-  })
+  @ApiProperty({ required: false })
   @IsEmail()
   @IsOptional()
   email?: string
@@ -38,9 +32,7 @@ export class UpdateUserDto {
 export class FindUserDto extends CreateUserDto {}
 
 export class LoginUserDto {
-  @ApiProperty({
-    required: false,
-  })
+  @ApiProperty({ required: false })
   @IsString()
   @IsOptional()
   @ValidateIf(o => isNullOrUndef(o.email))
@@ -50,9 +42,7 @@ export class LoginUserDto {
   @IsString()
   password!: string;
 
-  @ApiProperty({
-    required: false,
-  })
+  @ApiProperty({ required: false })
   @IsEmail()
   @IsOptional()
   @ValidateIf(o => isNullOrUndef(o.username))

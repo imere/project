@@ -6,7 +6,6 @@ import {
 } from './interface';
 import crypto from 'crypto';
 import * as fs from 'fs';
-import * as path from 'path';
 import env from '@packages/server/util/env';
 
 @Injectable()
@@ -25,8 +24,8 @@ export class RSA {
   }
 
   init(): void {
-    const pubKeyPath = path.join(__dirname, '..', 'pubKey.pem');
-    const priKeyPath = path.join(__dirname, '..', 'priKey.pem');
+    const pubKeyPath = env.auth.rsa.path.public;
+    const priKeyPath = env.auth.rsa.path.private;
 
     let publicKey, privateKey;
 

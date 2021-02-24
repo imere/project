@@ -4,7 +4,6 @@ import {
 } from '@packages/server/schema/user';
 import {
   FindUserDto,
-  LoginUserDto,
 } from '@packages/shared/design/dto/user';
 import { pick } from '@packages/shared/util/object';
 import { Injectable } from '@nestjs/common';

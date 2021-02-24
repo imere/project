@@ -5,7 +5,7 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { ResponseBuilder } from '@packages/shared/design/types';
+import { ResponseBuilder } from '@packages/shared/design/types/response';
 import { Response } from 'express';
 
 

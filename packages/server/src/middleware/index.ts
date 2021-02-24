@@ -11,6 +11,8 @@ import {
 } from '@nestjs/swagger';
 import env from '../util/env';
 import { AllExceptionsFilter } from '../globals/filter';
+import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
+import { Request } from 'express';
 
 export function registerMiddleware(app: INestApplication): void {
   app.useGlobalFilters(new AllExceptionsFilter());
@@ -21,6 +23,17 @@ export function registerMiddleware(app: INestApplication): void {
       allow: true,
     },
   }));
+
+
+  app.enableCors(function (req: Request, callback) {
+    const corsOptions: CorsOptions = {
+      origin: [/^https?:\/\/(127\.0\.0\.1|localhost)/],
+      methods: [req.method],
+      credentials: true,
+    };
+
+    callback(null as unknown as Error, corsOptions);
+  });
 
 
   app.use(compression());

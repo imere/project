@@ -4,7 +4,8 @@ import { AuthService } from './auth.service';
 import {
   ResponseBuilder,
   ServerResponse,
-} from '@packages/shared/design/types';
+} from '@packages/shared/design/types/response';
+import { LoginUserDto } from '@packages/shared/design/dto/user';
 import {
   Controller,
   HttpCode,
@@ -15,8 +16,11 @@ import {
 } from '@nestjs/common';
 import { PasswordGuard } from './methods/password.guard';
 import { SessionGuard } from './methods/session.guard';
-import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { LoginUserDto } from '../../../shared/src/design/dto/user';
+import {
+  ApiBody,
+  ApiOperation,
+  ApiTags,
+} from '@nestjs/swagger';
 
 @ApiTags('Auth')
 @Controller('auth')

@@ -5,7 +5,7 @@ import env from './util/env';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    logger: ['verbose'],
+    logger: ['error', 'warn', 'debug', 'verbose'],
   });
 
   registerMiddleware(app);

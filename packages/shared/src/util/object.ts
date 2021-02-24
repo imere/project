@@ -10,16 +10,6 @@ export function isNullOrUndef(val: unknown): val is null | undefined {
   return isNull(val) || isUndef(val);
 }
 
-const hop = Object.prototype.hasOwnProperty;
-
-// eslint-disable-next-line @typescript-eslint/ban-types
-function hasOwnProperty<O, K extends PropertyKey>(obj: O, p: K): obj is O & Record<K, unknown> {
-  if (isNullOrUndef(obj)) return false;
-
-  return hop.call(obj, p);
-}
-
-
 /**
  * Pick specific properties
  *

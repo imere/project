@@ -1,9 +1,9 @@
-import { Component, ErrorInfo } from 'react';
-import { Logger } from '../util/Logger';
-import { TElement } from '../types/elements';
+import { Component, ErrorInfo, ReactNode } from 'react';
+import { TObject } from '@packages/shared/design/types/common';
+import { Logger } from '../shared/Logger';
 
 interface IProps extends Record<string, unknown> {
-  children: TElement
+  children: ReactNode
 }
 
 interface IState extends Record<string, unknown> {
@@ -23,7 +23,7 @@ export default class ErrorBoundary extends Component<IProps, IState> {
     };
   }
 
-  static getDerivedStateFromError(): Record<string, unknown> {
+  static getDerivedStateFromError(): TObject {
     return { hasError: true };
   }
 
@@ -37,7 +37,7 @@ export default class ErrorBoundary extends Component<IProps, IState> {
     });
   }
 
-  render(): TElement {
+  render(): ReactNode {
     const { children } = this.props;
     const { hasError, errorObject } = this.state;
 
