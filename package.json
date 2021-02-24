@@ -10,12 +10,15 @@
     "lint:fix": "eslint --fix ."
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.0.0",
+    "@commitlint/config-conventional": "^12.0.0",
     "@types/jest": "^26.0.20",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "@typescript-eslint/parser": "^4.15.0",
     "deepmerge": "^4.2.2",
     "eslint": "^7.19.0",
     "eslint-plugin-react": "^7.22.0",
+    "husky": "^5.1.1",
     "lerna": "^3.22.1",
     "stylelint": "^13.10.0",
     "ts-node": "^9.1.1"
