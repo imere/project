@@ -6,9 +6,10 @@
     "node": ">=14.15.4"
   },
   "scripts": {
+    "postinstall": "husky install",
     "ts:init": "ts-node ./tools/tsconfig.init.ts",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint": "eslint --ignore-pattern **/packages/client/config .",
+    "lint:fix": "eslint --ignore-pattern **/packages/client/config --fix ."
   },
   "devDependencies": {
     "@commitlint/cli": "^12.0.0",
