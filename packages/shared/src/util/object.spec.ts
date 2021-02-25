@@ -38,13 +38,14 @@ describe('object', () => {
   });
 
   describe(omit.name, () => {
-    it('omit props', () => {
+    it('omit own props', () => {
       const res = omit(dummy(), ['a']);
 
       expect(res).not.toHaveProperty('a');
 
       expect(res).toHaveProperty('b');
-      expect(res).toHaveProperty('non-own');
+
+      expect(res).not.toHaveProperty('non-own');
     });
   });
 
