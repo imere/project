@@ -7,37 +7,31 @@ describe('object', () => {
       b: {
         c: 'c',
       },
+      __proto__: {
+        'non-own': 'non-own',
+      },
     };
-
-    Object.defineProperty(Object.getPrototypeOf(obj), 'non', {
-      value: 'non',
-      enumerable: true,
-    });
 
     return obj;
   }
 
   describe(pick.name, () => {
     it('pick own props', () => {
-      const res = pick(dummy(), ['a']);
+      const res = pick(dummy(), ['a', 'b']);
 
       expect(res).toHaveProperty('a');
+      expect(res).toHaveProperty('b');
 
-      expect(Object.prototype.hasOwnProperty.call(res, 'non')).toBe(false);
-      expect(res).not.toHaveProperty('non');
-
-      expect(res).not.toHaveProperty('b');
+      expect(res).not.toHaveProperty('non-own');
     });
 
     it('and pick non-own props', () => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      const res = pick(dummy(), ['a', 'non']);
+      const res = pick(dummy(), ['a', 'non-own']);
 
       expect(res).toHaveProperty('a');
-
-      expect(Object.prototype.hasOwnProperty.call(res, 'non')).toBe(false);
-      expect(res).toHaveProperty('non');
+      expect(res).toHaveProperty('non-own');
 
       expect(res).not.toHaveProperty('b');
     });
@@ -50,7 +44,7 @@ describe('object', () => {
       expect(res).not.toHaveProperty('a');
 
       expect(res).toHaveProperty('b');
-      expect(res).toHaveProperty('non');
+      expect(res).toHaveProperty('non-own');
     });
   });
 
