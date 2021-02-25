@@ -1,4 +1,4 @@
-export enum EncType {
-  PLAIN = 'plain',
-  RSA = 'rsa'
-}
+export const EncType = {
+  PLAIN: 'plain',
+  RSA: 'rsa',
+};

@@ -1,4 +1,4 @@
-export enum TextEngine {
-  PLAIN = 'plain',
-  MARKDOWN='md'
-}
+export const TextEngine = {
+  PLAIN: 'plain',
+  MARKDOWN: 'md',
+};
