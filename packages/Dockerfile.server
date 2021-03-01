@@ -4,9 +4,14 @@ WORKDIR /app
 
 COPY ./shared ./packages/shared
 
+COPY ./analytics-front ./packages/analytics-front
+
 COPY ./client ./packages/client
 
 RUN cd ./packages/shared && \
+    npm install
+
+RUN cd ./packages/analytics-front && \
     npm install
 
 RUN cd ./packages/client && \
