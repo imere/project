@@ -1,4 +1,5 @@
 import { EncType } from '@packages/shared/design/types/encryption';
+import { ValueOf } from '@packages/shared/design/types/common';
 
 interface Instance {
   enc(val: string): string
@@ -7,7 +8,7 @@ interface Instance {
 
 export interface ICrypt {
   new (): Instance
-  type: EncType
+  type: ValueOf<typeof EncType>
 }
 
 export function CheckImplements<T>(): <K extends T>(ctor: K) => K {
