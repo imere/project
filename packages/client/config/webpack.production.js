@@ -7,6 +7,13 @@ import Config from 'webpack-chain';
  * @returns {import("webpack").Configuration}
  */
 export default function (chain, args) {
+
+  chain
+    .mode('production')
+    .cache({
+      type: 'filesystem',
+    });
+
   chain
     .output
     .pathinfo(false);

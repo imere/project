@@ -6,6 +6,13 @@ import Config from 'webpack-chain';
  * @returns {import("webpack").Configuration}
  */
 export default function (chain, args) {
+
+  chain
+    .mode('development')
+    .cache({
+      type: 'memory',
+    });
+
   chain
     .optimization
     .minimize(false);

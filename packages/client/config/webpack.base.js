@@ -12,12 +12,6 @@ export default function (chain, args) {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
   chain
-    .mode(args.mode)
-    .cache({
-      type: 'memory',
-    });
-
-  chain
     .entry('app')
     .add('./src/index');
 

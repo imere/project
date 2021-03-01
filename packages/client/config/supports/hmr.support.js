@@ -1,4 +1,3 @@
-import StylelintWebpackPlugin from 'stylelint-webpack-plugin';
 import webpack from 'webpack';
 import Config from 'webpack-chain';
 
