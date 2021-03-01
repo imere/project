@@ -1,4 +1,4 @@
-import { omit, pick } from './object';
+import { assign, omit, pick } from './object';
 
 describe('object', () => {
   function dummy() {
@@ -46,6 +46,18 @@ describe('object', () => {
       expect(res).toHaveProperty('b');
 
       expect(res).not.toHaveProperty('non-own');
+    });
+  });
+
+  describe(assign.name, () => {
+    it('assign value by path', () => {
+      const a = {};
+      assign(a, 'a.b.c', 'value');
+      expect(a).toStrictEqual({ a: { b: { c: 'value' } } });
+
+      const b = {};
+      assign(b, '...', 'value');
+      expect(b).toStrictEqual({ '': { '': { '': { '': 'value' } } } });
     });
   });
 
