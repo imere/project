@@ -11,7 +11,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
-    "test": "rpm run build"
+    "test": "npm run build"
   },
   "devDependencies": {
     "microbundle": "^0.13.0"
