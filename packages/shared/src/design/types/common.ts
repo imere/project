@@ -1,5 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type TObject = Record<PropertyKey, unknown>;
+
+export type ValueOf<T> = T[keyof T]
 
 export interface Constructable {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
