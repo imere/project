@@ -5,6 +5,9 @@
     "npm": "~7.5.3",
     "node": ">=14.15.4"
   },
+  "workspaces": [
+    "./packages/*"
+  ],
   "scripts": {
     "postinstall": "husky install",
     "ts:init": "ts-node ./tools/tsconfig.init.ts",
@@ -22,6 +25,7 @@
     "eslint-plugin-react": "^7.22.0",
     "husky": "^5.1.1",
     "lerna": "^3.22.1",
+    "lint-staged": "^10.5.4",
     "stylelint": "^13.10.0",
     "ts-node": "^9.1.1"
   }
