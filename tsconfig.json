@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "incremental": true,
+    "module": "Commonjs",
     "target": "ESNext",
     "lib": [
       "ESNext"
@@ -15,12 +16,18 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "sourceMap": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {
+      "@packages/analytics-front/*": [
+        "./packages/analytics-front/src/*"
+      ],
       "@packages/client/*": [
         "./packages/client/src/*"
       ],
@@ -31,7 +38,7 @@
         "./packages/shared/src/*"
       ]
     },
-    "pretty": true
+    "allowJs": true
   },
   "exclude": [
     "node_modules",

@@ -1,16 +1,15 @@
+import type { TsPaths } from './config.d';
 import * as fs from 'fs';
 import * as path from 'path';
 import deepmerge from 'deepmerge';
 import baseTsconfig from './tsconfig.base.json';
-import configOverrides from './config.override';
+import configOverrides from './config';
 
 const { excludes } = configOverrides;
 
 const root = path.posix.join(__dirname, '..');
 
 const packagesRoot = path.posix.join(root, 'packages');
-
-type TPaths = Record<string, string[]>
 
 function getPackageDirs() {
   return fs.readdirSync(
@@ -28,11 +27,11 @@ function writePackageConfig(dir: string, packageDirs: string[]) {
 
   for (const d of packageDirs) {
     if (dir === d) {
-      (<TPaths>paths)[`@${d}/*`] = ['./src/*'];
+      (<TsPaths>paths)[`@${d}/*`] = ['./src/*'];
       continue;
     }
     // TODO: detect dir depth
-    (<TPaths>paths)[`@${d}/*`] = [`../../${d}/src/*`];
+    (<TsPaths>paths)[`@${d}/*`] = [`../../${d}/src/*`];
   }
 
   {
@@ -65,7 +64,7 @@ function writeRootConfig(dir: string, packageDirs: string[]) {
   if (!paths) config.compilerOptions.paths = {};
 
   for (const d of packageDirs) {
-    (<TPaths>paths)[`@${d}/*`] = [`./${d}/src/*`];
+    (<TsPaths>paths)[`@${d}/*`] = [`./${d}/src/*`];
   }
 
   fs.writeFileSync(

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "incremental": true,
+    "module": "Commonjs",
     "target": "ESNext",
     "lib": [
       "ESNext"
@@ -15,13 +16,16 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "sourceMap": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {},
-    "pretty": true
+    "allowJs": true
   },
   "exclude": [
     "node_modules",
