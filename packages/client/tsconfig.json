@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "es5",
+    "module": "ES6",
+    "target": "ES5",
     "lib": [
       "ESNext",
       "DOM",
@@ -17,12 +18,18 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "sourceMap": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
+    "outDir": "./dist",
     "paths": {
+      "@packages/analytics-front/*": [
+        "../../packages/analytics-front/src/*"
+      ],
       "@packages/client/*": [
         "./src/*"
       ],
@@ -33,13 +40,8 @@
         "../../packages/shared/src/*"
       ]
     },
-    "pretty": true,
-    "jsx": "react-jsx",
-    "module": "es6",
-    "skipDefaultLibCheck": true,
-    "sourceMap": false,
-    "outDir": "./dist",
-    "allowJs": true
+    "allowJs": true,
+    "jsx": "react-jsx"
   },
   "exclude": [
     "node_modules",
