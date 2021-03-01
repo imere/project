@@ -1,0 +1,19 @@
+{
+  "name": "analytics-front",
+  "version": "0.0.0",
+  "description": "analytics",
+  "license": "ISC",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "esmodule": "dist/index.modern.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "microbundle",
+    "test": "rpm run build"
+  },
+  "devDependencies": {
+    "microbundle": "^0.13.0"
+  }
+}
