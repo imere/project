@@ -1,25 +1,30 @@
-import { UTC } from '@packages/shared/util/time';
+import { FC } from 'react';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 import ErrorBoundary from './components/ErrorBoundary';
-import { request } from './api/index';
+import { LandPage } from './pages/LandPage';
+import { defaultTheme } from './util/theme';
 
-export function App(): JSX.Element {
+export const App: FC = function App() {
   return (
     <ErrorBoundary>
-      <div>
-        APP
-        <p>{UTC.MILLIS()}</p>
-        <button
-          className="btn"
-          onClick={() => {
-            request.json.post('http://127.0.0.1:3000/auth/login', {
-              body: {
-                username: 'admin',
-                password: 'admin',
-              },
-            });
-          }}
-        >button</button>
-      </div>
+      <span data-testid="testid" style={{ display: 'none' }} />
+      <ThemeProvider theme={defaultTheme}>
+        <BrowserRouter>
+          <Switch>
+            <Route path='/landing'>
+              <LandPage />
+            </Route>
+            <Route path='*'>
+              <LandPage />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </ThemeProvider>
     </ErrorBoundary>
   );
-}
+};
