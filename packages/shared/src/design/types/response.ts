@@ -52,10 +52,6 @@ export class ResponseBuilder {
       ...params,
     };
 
-    if (isErrorResponse(res)) {
-      res.msg ??= '';
-    }
-
     return res;
   }
 }

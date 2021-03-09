@@ -142,3 +142,35 @@ export function simpleMerge(target: O, source: O, concat = false): O {
 
   return res;
 }
+
+type TPrimitive = string | boolean | number | BigInt | symbol | undefined | null
+
+/**
+ * Returns true if `val` is a JS primitive
+ *
+ * @export
+ * @param {unknown} val
+ * @returns {val is TPrimitive}
+ */
+export function isPrimitive(val: unknown): val is TPrimitive {
+  return Object(val) !== val;
+}
+
+
+/**
+ * Create an object with value mirrored to its key
+ *
+ * @export
+ * @template K
+ * @param {...K[]} args
+ * @returns {{[V in K]: V}}
+ */
+export function createMirror<K extends string>(...args: K[]): {[V in K]: V} {
+  const res = Object.create(null);
+
+  args.forEach(key => {
+    res[key] = key;
+  });
+
+  return res;
+}

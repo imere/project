@@ -1,5 +1,7 @@
 export type TObject = Record<PropertyKey, unknown>;
 
+export type Nullable<T> = T | undefined | null
+
 export type ValueOf<T> = T[keyof T]
 
 export interface Constructable {
