@@ -1,8 +1,8 @@
 import Config from 'webpack-chain';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import cssModuleSupport from './css-module.support.js';
+import * as path from 'path'
 
-export default function cssSupport(...options) {
+export default function cssModuleSupport(...options) {
   return (
     /**
      * @param {Config} chain
@@ -12,9 +12,8 @@ export default function cssSupport(...options) {
     function (chain, args) {
       const rule = chain
         .module
-        .rule(cssSupport.name);
-
-      rule.test(rule.has(cssModuleSupport.name) ? /(?<!module)\.css$/ : /\.css$/);
+        .rule(cssModuleSupport.name)
+        .test(/module\.css$/);
 
       rule.when(
         args.isProd,
@@ -40,6 +39,14 @@ export default function cssSupport(...options) {
         .loader('css-loader')
         .options({
           importLoaders: 1,
+          modules: {
+            mode: 'local',
+            localIdentName:
+              args.isProd
+                ? '[hash:base64:5]'
+                : '[path][name]__[local]',
+            context: path.join(process.cwd(), 'src'),
+          },
           sourceMap: !args.isProd,
         });
 

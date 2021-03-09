@@ -1,4 +1,3 @@
-import StylelintWebpackPlugin from 'stylelint-webpack-plugin';
 import Config from 'webpack-chain';
 
 export default function assetSupport(...options) {
@@ -12,7 +11,7 @@ export default function assetSupport(...options) {
       chain
         .module
         .rule(assetSupport.name)
-        .test(/.(jpe?g|png|svg)$/)
+        .test(/\.(jpe?g|png|svg)$/)
         .type('asset')
         .set('generator', {
           filename: 'static/[name][hash:5][ext]',

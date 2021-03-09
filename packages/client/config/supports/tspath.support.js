@@ -1,10 +1,9 @@
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
-import Config from 'webpack-chain';
 
 export default function tsPathSupport(...options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain').Config} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */

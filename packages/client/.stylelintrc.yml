@@ -1,3 +1,6 @@
 extends: "stylelint-config-recommended"
 rules:
   no-duplicate-selectors: true
+  # https://stackoverflow.com/questions/47607602/how-to-add-a-tailwind-css-rule-to-css-checker
+  at-rule-no-unknown: [true, { ignoreAtRules: ["extends", "tailwind"] }]
+  no-empty-source: null
