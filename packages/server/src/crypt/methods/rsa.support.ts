@@ -6,7 +6,7 @@ import {
 } from './interface';
 import crypto from 'crypto';
 import * as fs from 'fs';
-import env from '@packages/server/util/env';
+import env from '../../util/env';
 
 @Injectable()
 @CheckImplements<ICrypt>()
