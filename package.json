@@ -5,9 +5,6 @@
     "npm": "~7.5.3",
     "node": ">=14.15.4"
   },
-  "workspaces": [
-    "./packages/*"
-  ],
   "scripts": {
     "postinstall": "husky install",
     "ts:init": "ts-node ./tools/tsconfig.init.ts",
