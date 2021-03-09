@@ -1,4 +1,9 @@
-import { assign, omit, pick } from './object';
+import {
+  assign,
+  createMirror,
+  omit,
+  pick,
+} from './object';
 
 describe('object', () => {
   function dummy() {
@@ -58,6 +63,18 @@ describe('object', () => {
       const b = {};
       assign(b, '...', 'value');
       expect(b).toStrictEqual({ '': { '': { '': { '': 'value' } } } });
+    });
+  });
+
+  describe(createMirror.name, () => {
+    it('create key mirror', () => {
+      const o = createMirror('a', 'b', 'c');
+
+      expect(o).toStrictEqual({
+        a: 'a',
+        b: 'b',
+        c: 'c',
+      });
     });
   });
 
