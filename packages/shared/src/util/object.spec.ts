@@ -70,11 +70,16 @@ describe('object', () => {
     it('create key mirror', () => {
       const o = createMirror('a', 'b', 'c');
 
-      expect(o).toStrictEqual({
-        a: 'a',
-        b: 'b',
-        c: 'c',
-      });
+      expect(o).toStrictEqual(
+        Object.assign(
+          Object.create(null),
+          {
+            a: 'a',
+            b: 'b',
+            c: 'c',
+          }
+        )
+      );
     });
   });
 
