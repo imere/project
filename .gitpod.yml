@@ -7,7 +7,7 @@ tasks:
   - init: cd packages/server && npm install && exit
   - init: cd packages/client && npm install && exit
   - init: cd packages/services && npm install && exit
-  - init: npm install
+  - init: npm install && chmod -R 777 .husky/
 
 vscode:
   extensions:
