@@ -4,6 +4,7 @@
     "dbaeumer.vscode-eslint",
     "bradlc.vscode-tailwindcss",
     "stylelint.vscode-stylelint",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "jpoissonnier.vscode-styled-components"
   ]
 }
