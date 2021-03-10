@@ -27,3 +27,5 @@ vscode:
     - varharrie.import-beautify@0.3.0:u4dEBpxSldHIEr0p06vt7Q==
     - christian-kohler.path-intellisense@2.3.0:4aNBD+QUimscVO5NwoATiw==
     - pkief.material-icon-theme@4.5.0:ckDTVCTpdr4G0ZmIlQWkZA==
+    # https://github.com/gitpod-io/website/blob/master/.gitpod.yml
+    - jpoissonnier.vscode-styled-components@0.0.29:7hF8G3VtB+HNearI5Zw+NA==
