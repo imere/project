@@ -3,6 +3,7 @@ image:
 
 tasks:
   - init: cd packages/shared && npm install && exit
+  - init: cd packages/analytics-front && npm install && exit
   - init: cd packages/server && npm install && exit
   - init: cd packages/client && npm install && exit
   - init: cd packages/services && npm install && exit
