@@ -8,3 +8,15 @@ tasks:
   - init: cd packages/client && npm install && exit
   - init: cd packages/services && npm install && exit
   - init: npm install
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint@2.1.8:02aHhbJ0Q4aGdjHXlTdVKg==
+    - bradlc.vscode-tailwindcss@0.5.9:yRBWziGXnf16R7jUzlgn5w==
+    - stylelint.vscode-stylelint@0.86.0:b7wCsBPLKjtb6EgCXLO5sg==
+    - formulahendry.auto-close-tag@0.5.10:GSIjAJo5b8OeW5FdWSDA8A==
+    - steoates.autoimport@1.5.3:Tr3qYUEEq73wrKwCWaYivQ==
+    - coenraads.bracket-pair-colorizer-2@0.1.4:+JUeb/jFYZt2/0MS/gUllA==
+    - streetsidesoftware.code-spell-checker@1.10.2:IKNWSiKNhoiWZ0g+IVw/mA==
+    - oouo-diogo-perdigao.docthis@0.8.2:lMa2IQ3494Vo08MVyma07w==
+    - vincaslt.highlight-matching-tag@0.10.0:pP+bZ1YdLRE3UArege6hTw==
