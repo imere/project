@@ -1,7 +1,5 @@
-import os from 'os';
-
 /**
- * @param {import('webpack-chain').Config} chain
+ * @param {import('webpack-chain')} chain
  * @param {object} args
  * @returns {import("webpack").Configuration}
  */
@@ -9,7 +7,7 @@ export default function (chain, args) {
   chain
     .mode('development')
     .cache({
-      type: os.freemem() / 1024 / 1024 >= 1500 ?  'memory' : 'filesystem',
+      type: 'memory',
     });
 
   chain.devtool('eval-source-map');

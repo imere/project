@@ -1,10 +1,9 @@
-import Config from 'webpack-chain';
 import jsSupport from './js.support.js';
 
 export default function reactSupport(...options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain')} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */

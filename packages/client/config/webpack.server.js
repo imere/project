@@ -1,7 +1,7 @@
 import hmrSupport from './supports/hmr.support.js';
 
 /**
- * @param {import('webpack-chain').Config} chain
+ * @param {import('webpack-chain')} chain
  * @param {object} args
  * @returns {import("webpack").Configuration}
  */

@@ -1,10 +1,9 @@
 import webpack from 'webpack';
-import Config from 'webpack-chain';
 
 export default function hmrSupport(...options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain').} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */

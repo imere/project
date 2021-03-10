@@ -1,8 +1,5 @@
-import TerserPlugin from 'terser-webpack-plugin';
-import Config from 'webpack-chain';
-
 /**
- * @param {Config} chain
+ * @param {import('webpack-chain')} chain
  * @param {object} args
  * @returns {import("webpack").Configuration}
  */

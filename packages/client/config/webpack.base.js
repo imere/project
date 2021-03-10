@@ -1,10 +1,9 @@
-import Config from 'webpack-chain';
 import * as path from 'path';
 import CopyPlugin from 'copy-webpack-plugin';
 import { fileURLToPath } from 'url';
 
 /**
-   * @param {Config} chain
+   * @param {import('webpack-chain')} chain
    * @param {object} args
    * @returns {import("webpack").Configuration}
    */

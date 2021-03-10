@@ -1,6 +1,6 @@
 import Config from 'webpack-chain';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import * as path from 'path'
+import * as path from 'path';
 
 export default function cssModuleSupport(...options) {
   return (

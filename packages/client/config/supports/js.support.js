@@ -1,8 +1,6 @@
-import Config from 'webpack-chain';
-
 /**
  * @param {any[]} options
- * @param {Config} chain
+ * @param {import('webpack-chain')} chain
  * @param {object} args
  */
 function swcImpl(options, chain, args) {
@@ -49,7 +47,7 @@ function swcImpl(options, chain, args) {
 
 /**
  * @param {any[]} options
- * @param {Config} chain
+ * @param {import('webpack-chain')} chain
  * @param {object} args
  */
 function babelImpl(options, chain, args) {
@@ -75,7 +73,7 @@ function babelImpl(options, chain, args) {
 export default function jsSupport(...options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain')} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */

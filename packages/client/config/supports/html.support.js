@@ -1,4 +1,3 @@
-import Config from 'webpack-chain';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 /**
@@ -7,7 +6,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default function htmlSupport(options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain').} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */

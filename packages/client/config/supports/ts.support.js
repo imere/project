@@ -1,8 +1,8 @@
-import Config from 'webpack-chain';
 import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin';
+
 /**
  * @param {any[]} options
- * @param {Config} chain
+ * @param {import('webpack-chain')} chain
  * @param {object} args
  */
 function swcImpl(options, chain, args) {
@@ -50,7 +50,7 @@ function swcImpl(options, chain, args) {
 
 /**
  * @param {any[]} options
- * @param {Config} chain
+ * @param {import('webpack-chain')} chain
  * @param {object} args
  */
 function babelImpl(options, chain, args) {
@@ -90,7 +90,7 @@ function babelImpl(options, chain, args) {
 export default function tsSupport(...options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain')} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */

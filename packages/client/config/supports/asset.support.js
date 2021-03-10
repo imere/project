@@ -1,9 +1,7 @@
-import Config from 'webpack-chain';
-
 export default function assetSupport(...options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain').} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */

@@ -1,10 +1,9 @@
-import Config from 'webpack-chain';
 import ESLintWebpackPlugin from 'eslint-webpack-plugin';
 
 export default function eslintSupport(...options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain').} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */

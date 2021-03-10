@@ -1,11 +1,10 @@
-import Config from 'webpack-chain';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import cssModuleSupport from './css-module.support.js';
 
 export default function cssSupport(...options) {
   return (
     /**
-     * @param {Config} chain
+     * @param {import('webpack-chain').} chain
      * @param {object} args
      * @returns {import("webpack").Configuration}
      */
