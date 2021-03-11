@@ -13,7 +13,7 @@ interface IProps {
 }
 
 export const Button = styled(withClassNames(motion.button, ['button'])).attrs({ type: 'button' })<IProps>`
-padding: 1px 2px;
+padding: 0.0625rem 0.125rem;
 
 cursor: pointer;
 
