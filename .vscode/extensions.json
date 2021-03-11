@@ -5,6 +5,19 @@
     "bradlc.vscode-tailwindcss",
     "stylelint.vscode-stylelint",
     "redhat.vscode-yaml",
-    "jpoissonnier.vscode-styled-components"
+    "jpoissonnier.vscode-styled-components",
+    "steoates.autoimport",
+    "streetsidesoftware.code-spell-checker",
+    "anseki.vscode-color",
+    "oouo-diogo-perdigao.docthis",
+    "varharrie.import-beautify",
+    "wix.vscode-import-cost",
+    "yzhang.markdown-all-in-one",
+    "christian-kohler.npm-intellisense",
+    "eg2.vscode-npm-script",
+    "christian-kohler.path-intellisense",
+    "henoc.svgeditor",
+    "cssho.vscode-svgviewer",
+    "zignd.html-css-class-completion"
   ]
 }
