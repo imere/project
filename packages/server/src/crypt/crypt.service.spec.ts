@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CryptService } from './crypt.service';
-import { EncType } from '@packages/shared/design/types/encryption';
+import { EncType } from '@package/shared/src/design/types/encryption';
 import { Plain } from './methods/plain.support';
 import { RSA } from './methods/rsa.support';
 

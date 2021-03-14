@@ -1,5 +1,5 @@
-import { IDefaultProps } from '@packages/client/types';
-import { classnames } from '@packages/client/util/classnames';
+import { IDefaultProps } from '../../types';
+import { classnames } from '../../util/classnames';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import { FC } from 'react';
 import { createPortal } from 'react-dom';

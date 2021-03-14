@@ -1,4 +1,4 @@
-import { Constructable } from '@packages/shared/design/types/common';
+import { Constructable } from '@package/shared/src/design/types/common';
 
 declare function registerPaint(name: string, ctor: PaintCtor): void
 

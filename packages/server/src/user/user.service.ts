@@ -1,18 +1,18 @@
 import { CryptService } from '../crypt/crypt.service';
-import { UTC } from '@packages/shared/util/time';
+import { UTC } from '@package/shared/src/util/time';
 import {
   CreateUserDto,
   FindUserDto,
   UpdateUserDto,
-} from '@packages/shared/design/dto/user';
+} from '@package/shared/src/design/dto/user';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import {
   User,
   UserDocument,
-} from '@packages/server/schema/user';
-import { EncType } from '@packages/shared/design/types/encryption';
+} from '../schema/user';
+import { EncType } from '@package/shared/src/design/types/encryption';
 
 @Injectable()
 export class UserService {

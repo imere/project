@@ -1,5 +1,5 @@
 {
-  "name": "services",
+  "name": "@package/services",
   "version": "0.0.0",
   "description": "services",
   "scripts": {

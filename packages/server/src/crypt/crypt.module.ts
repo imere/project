@@ -1,4 +1,4 @@
-import { EncType } from '@packages/shared/design/types/encryption';
+import { EncType } from '@package/shared/src/design/types/encryption';
 import { Module } from '@nestjs/common';
 import { CryptService } from './crypt.service';
 import { RSA } from './methods/rsa.support';

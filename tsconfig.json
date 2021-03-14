@@ -25,17 +25,17 @@
     "baseUrl": "./",
     "outDir": "./dist",
     "paths": {
-      "@packages/analytics-front/*": [
-        "./packages/analytics-front/src/*"
+      "@package/analytics-front/*": [
+        "./packages/analytics-front/*"
       ],
-      "@packages/client/*": [
-        "./packages/client/src/*"
+      "@package/client/*": [
+        "./packages/client/*"
       ],
-      "@packages/server/*": [
-        "./packages/server/src/*"
+      "@package/server/*": [
+        "./packages/server/*"
       ],
-      "@packages/shared/*": [
-        "./packages/shared/src/*"
+      "@package/shared/*": [
+        "./packages/shared/*"
       ]
     },
     "allowJs": true

@@ -1,5 +1,5 @@
-import { User } from '@packages/server/schema/user';
-import { pick } from '@packages/shared/util/object';
+import { User } from '../schema/user';
+import { pick } from '@package/shared/src/util/object';
 import { ValidationPipe } from '../globals/validation.pipe';
 import {
   Body,
@@ -16,11 +16,11 @@ import {
 import {
   ResponseBuilder,
   ServerResponse,
-} from '@packages/shared/design/types/response';
+} from '@package/shared/src/design/types/response';
 import {
   CreateUserDto,
   UpdateUserDto,
-} from '@packages/shared/design/dto/user';
+} from '@package/shared/src/design/dto/user';
 import { UserService } from './user.service';
 import { Request } from 'express';
 import { SessionGuard } from '../auth/methods/session.guard';

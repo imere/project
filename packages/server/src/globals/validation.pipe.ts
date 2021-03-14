@@ -1,4 +1,4 @@
-import { pick } from '@packages/shared/util/object';
+import { pick } from '@package/shared/src/util/object';
 import { PipeTransform, Injectable, ArgumentMetadata, BadRequestException } from '@nestjs/common';
 import { validate } from 'class-validator';
 import { plainToClass } from 'class-transformer';

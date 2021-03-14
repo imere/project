@@ -1,4 +1,4 @@
-import { assign } from '@packages/shared/util/object';
+import { assign } from '@package/shared/src/util/object';
 import { finalResult } from '../data';
 import { INetworkInfo } from '../global';
 import { INavigatorInfo } from '../helper/device';

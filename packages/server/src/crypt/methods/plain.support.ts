@@ -1,4 +1,4 @@
-import { EncType } from '@packages/shared/design/types/encryption';
+import { EncType } from '@package/shared/src/design/types/encryption';
 import { Injectable } from '@nestjs/common';
 import { ICrypt, CheckImplements } from './interface';
 

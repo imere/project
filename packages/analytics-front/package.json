@@ -1,5 +1,5 @@
 {
-  "name": "analytics-front",
+  "name": "@package/analytics-front",
   "version": "0.0.0",
   "description": "analytics",
   "license": "ISC",

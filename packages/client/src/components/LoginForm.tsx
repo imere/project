@@ -1,4 +1,4 @@
-import { createMirror } from '@packages/shared/util/object';
+import { createMirror } from '@package/shared/src/util/object';
 import { AnimationProps, motion, TargetAndTransition, useCycle } from 'framer-motion';
 import { FC, useEffect } from 'react';
 import styled, { css } from 'styled-components';

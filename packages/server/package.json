@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "@package/server",
   "version": "0.0.0",
   "description": "main server",
   "license": "ISC",

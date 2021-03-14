@@ -1,6 +1,6 @@
 import { MongooseModule } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
-import { User, UserSchema } from '@packages/server/schema/user';
+import { User, UserSchema } from '../schema/user';
 import { CryptModule } from '../crypt/crypt.module';
 import env from '../util/env';
 import { UserService } from './user.service';

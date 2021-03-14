@@ -1,11 +1,11 @@
-import { UTC } from '@packages/shared/util/time';
+import { UTC } from '@package/shared/src/util/time';
 import { Request } from 'express';
 import { AuthService } from './auth.service';
 import {
   ResponseBuilder,
   ServerResponse,
-} from '@packages/shared/design/types/response';
-import { LoginUserDto } from '@packages/shared/design/dto/user';
+} from '@package/shared/src/design/types/response';
+import { LoginUserDto } from '@package/shared/src/design/dto/user';
 import {
   Controller,
   HttpCode,

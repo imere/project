@@ -1,5 +1,5 @@
-import { EncType } from '@packages/shared/design/types/encryption';
-import { ValueOf } from '@packages/shared/design/types/common';
+import { EncType } from '@package/shared/src/design/types/encryption';
+import { ValueOf } from '@package/shared/src/design/types/common';
 
 interface Instance {
   enc(val: string): string

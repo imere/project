@@ -7,7 +7,7 @@ import {
   Strategy,
 } from 'passport-local';
 import { AuthService } from '../auth.service';
-import { UserDocument } from '@packages/server/schema/user';
+import { UserDocument } from '../../schema/user';
 
 @Injectable()
 export class PasswordStrategy extends PassportStrategy(Strategy, 'password') {

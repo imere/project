@@ -1,5 +1,5 @@
-import type { TObject } from '@packages/shared/design/types/common';
 import { Component, ErrorInfo, ReactNode } from 'react';
+import type { TObject } from '@package/shared/src/design/types/common';
 import type { IDefaultProps } from '../types';
 import { Logger } from '../util/logger';
 

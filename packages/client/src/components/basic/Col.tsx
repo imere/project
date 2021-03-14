@@ -1,5 +1,5 @@
-import { motion } from '@packages/client/util/reexport';
-import { withClassNames } from '@packages/client/util/withClassNames';
+import { motion } from '../../util/reexport';
+import { withClassNames } from '../../util/withClassNames';
 import { HTMLMotionProps, MotionStyle } from 'framer-motion';
 import { useContext } from 'react';
 import styled from 'styled-components';

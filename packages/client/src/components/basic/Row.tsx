@@ -1,5 +1,5 @@
-import { useMemoValue } from '@packages/client/hooks/useMemoValue';
-import { motion } from '@packages/client/util/reexport';
+import { useMemoValue } from '../../hooks/useMemoValue';
+import { motion } from '../../util/reexport';
 import { HTMLMotionProps } from 'framer-motion';
 import { createContext } from 'react';
 import styled from 'styled-components';

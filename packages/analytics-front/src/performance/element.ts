@@ -1,4 +1,4 @@
-import { pick } from '@packages/shared/util/object';
+import { pick } from '@package/shared/src/util/object';
 import { IPerformanceEntryExtend } from '../typings/performance';
 import { IPerformanceObserverCallback } from './index';
 

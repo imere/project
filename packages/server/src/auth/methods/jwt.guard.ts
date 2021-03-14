@@ -4,7 +4,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { UserPayload } from '@packages/server/types/jwt';
+import { UserPayload } from '../../types/jwt';
 import { Observable } from 'rxjs';
 
 @Injectable()

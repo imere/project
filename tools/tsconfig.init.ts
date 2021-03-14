@@ -26,12 +26,13 @@ function writePackageConfig(dir: string, packageDirs: string[]) {
   const { compilerOptions: { paths } } = config;
 
   for (const d of packageDirs) {
+    const alias = d.replace(/^packages/, 'package');
     if (dir === d) {
-      (<TsPaths>paths)[`@${d}/*`] = ['./src/*'];
+      (<TsPaths>paths)[`@${alias}/*`] = ['./*'];
       continue;
     }
     // TODO: detect dir depth
-    (<TsPaths>paths)[`@${d}/*`] = [`../../${d}/src/*`];
+    (<TsPaths>paths)[`@${alias}/*`] = [`../../${d}/*`];
   }
 
   {
@@ -64,7 +65,8 @@ function writeRootConfig(dir: string, packageDirs: string[]) {
   if (!paths) config.compilerOptions.paths = {};
 
   for (const d of packageDirs) {
-    (<TsPaths>paths)[`@${d}/*`] = [`./${d}/src/*`];
+    const alias = d.replace(/^packages/, 'package');
+    (<TsPaths>paths)[`@${alias}/*`] = [`./${d}/*`];
   }
 
   fs.writeFileSync(

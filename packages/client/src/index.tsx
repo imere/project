@@ -1,7 +1,7 @@
-import './polyfill';
-import { runAnalytics } from '@packages/analytics-front/index';
+import { runAnalytics } from '@package/analytics-front/src/index';
 import { render } from 'react-dom';
 import { App } from './App';
+import './polyfill';
 import './styles/global.css';
 
 runAnalytics();

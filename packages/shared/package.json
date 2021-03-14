@@ -1,5 +1,5 @@
 {
-  "name": "shared",
+  "name": "@package/shared",
   "version": "0.0.0",
   "description": "shared",
   "license": "ISC",

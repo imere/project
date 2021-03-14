@@ -1,4 +1,4 @@
-import { User } from '@packages/server/schema/user';
+import { User } from '../schema/user';
 import { Session, SessionData } from 'express-session';
 
 declare module 'express' {

@@ -1,5 +1,4 @@
-import { Styles } from '@packages/client/styles/common';
-import { withClassNames } from '@packages/client/util/withClassNames';
+import { withClassNames } from '../../util/withClassNames';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 

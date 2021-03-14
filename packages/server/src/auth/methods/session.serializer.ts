@@ -1,6 +1,6 @@
 import { PassportSerializer } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
-import { UserPayload } from '@packages/server/types/jwt';
+import { UserPayload } from '../../types/jwt';
 
 @Injectable()
 export class SessionSerializer extends PassportSerializer {

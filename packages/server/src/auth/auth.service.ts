@@ -1,11 +1,11 @@
 import {
   User,
   UserDocument,
-} from '@packages/server/schema/user';
+} from '../schema/user';
 import {
   FindUserDto,
-} from '@packages/shared/design/dto/user';
-import { pick } from '@packages/shared/util/object';
+} from '@package/shared/src/design/dto/user';
+import { pick } from '@package/shared/src/util/object';
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import {

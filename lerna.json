@@ -1,6 +1,9 @@
 {
   "packages": [
-    "packages/*"
+    "packages/shared",
+    "packages/analytics-front",
+    "packages/client",
+    "packages/server"
   ],
   "version": "0.0.0"
 }
