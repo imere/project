@@ -1,5 +1,7 @@
 import Chain from 'webpack-chain';
 import { merge } from 'webpack-merge';
+import yargs from 'yargs-parser';
+
 import SpeedMeasurePlugin from 'speed-measure-webpack-plugin';
 
 import createBaseConfig from './config/webpack.base.js';
@@ -17,7 +19,8 @@ import TerserPlugin from 'terser-webpack-plugin';
 import assetSupport from './config/supports/asset.support.js';
 import cssSupport from './config/supports/css.support.js';
 
-const mode = process.env.NODE_ENV ?? ('production' && 'development');
+const mode = yargs(process.argv).mode ?? ('production' && 'development');
+console.warn('Running in', mode);
 const args = {
   env: process.env,
   isProd: mode === 'production',
