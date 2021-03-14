@@ -1,3 +1,5 @@
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
 /**
  * @param {import('webpack-chain')} chain
  * @param {object} args
@@ -14,6 +16,14 @@ export default function (chain, args) {
   chain
     .output
     .pathinfo(false);
+
+  chain
+    .plugin('analyzer')
+    .use(BundleAnalyzerPlugin, [{
+      openAnalyzer: false,
+      analyzerMode: 'static',
+      reportFilename: 'report.html',
+    }]);
 
   chain
     .optimization
