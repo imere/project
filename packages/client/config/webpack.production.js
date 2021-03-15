@@ -22,7 +22,7 @@ export default function (chain, args) {
     .use(BundleAnalyzerPlugin, [{
       openAnalyzer: false,
       analyzerMode: 'static',
-      reportFilename: 'report.html',
+      reportFilename: '../node_modules/.cache/docs/report.html',
     }]);
 
   chain
