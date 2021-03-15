@@ -13,6 +13,7 @@ export default function (chain, args) {
     })
     .host('127.0.0.1')
     .port(8000)
+    .disableHostCheck(true)
     .historyApiFallback({
       rewrites: [
         {
