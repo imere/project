@@ -4,9 +4,9 @@
 @import './components/avatar.css';
 @import './components/button.css';
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 body {
     background-color: cornflowerblue;
