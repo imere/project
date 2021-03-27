@@ -1,25 +1,27 @@
+import { Injectable } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
+import { InjectModel } from '@nestjs/mongoose';
+import {
+  FindUserDto,
+} from '@package/shared/src/design/dto/user';
+import { pick } from '@package/shared/src/util/object';
+import { Model } from 'mongoose';
+import { CryptService } from '../crypt/crypt.service';
 import {
   User,
   UserDocument,
 } from '../schema/user';
 import {
-  FindUserDto,
-} from '@package/shared/src/design/dto/user';
-import { pick } from '@package/shared/src/util/object';
-import { Injectable } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
-import {
   JwtTokenPayload,
   UserPayload,
 } from '../types/jwt';
-import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
 
 @Injectable()
 export class AuthService {
   constructor(
     @InjectModel(User.name) private readonly userModel: Model<UserDocument>,
-    private readonly jwtService: JwtService
+    private readonly jwtService: JwtService,
+    private readonly cryptService: CryptService
   ) { }
 
   async updateUserById(id: string, user: Partial<User>): Promise<void> {
@@ -32,6 +34,8 @@ export class AuthService {
     }).exec();
 
     if (!res) return null;
+
+    if (this.cryptService.decPassword(res.password) !== user.password) return null;
 
     return res;
   }

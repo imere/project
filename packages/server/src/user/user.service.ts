@@ -1,18 +1,19 @@
-import { CryptService } from '../crypt/crypt.service';
-import { UTC } from '@package/shared/src/util/time';
+import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { isNullOrUndef } from '@package/server/../shared/src/util/object';
 import {
   CreateUserDto,
   FindUserDto,
   UpdateUserDto,
 } from '@package/shared/src/design/dto/user';
-import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
+import { EncType } from '@package/shared/src/design/types/encryption';
+import { UTC } from '@package/shared/src/util/time';
 import { Model } from 'mongoose';
+import { CryptService } from '../crypt/crypt.service';
 import {
   User,
   UserDocument,
 } from '../schema/user';
-import { EncType } from '@package/shared/src/design/types/encryption';
 
 @Injectable()
 export class UserService {
@@ -38,6 +39,10 @@ export class UserService {
   }
 
   async updateById(id: string, user: Partial<UpdateUserDto>): Promise<UserDocument | null> {
+    if (!isNullOrUndef(user.password)) {
+      user.password = this.cryptService.encPassword(user.password);
+    }
+
     return this.userModel.findByIdAndUpdate(id, user).exec();
   }
 
