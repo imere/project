@@ -25,7 +25,7 @@ export class Post {
 
 
   @ApiProperty()
-  @Prop()
+  @Prop({ required: true })
   createdAt!: number
 
 

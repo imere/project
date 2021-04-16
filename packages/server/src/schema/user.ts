@@ -19,16 +19,12 @@ export class User {
   @Prop({ required: true })
   passwordEnctype!: string
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @Prop()
   email?: string
 
-  @ApiProperty()
-  @Prop({ default: () => [] })
-  roles?: string[]
-
-  @ApiProperty()
-  @Prop()
+  @ApiProperty({ required: false })
+  @Prop({ required: true })
   createdAt!: number
 
   @ApiProperty()

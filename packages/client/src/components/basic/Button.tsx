@@ -13,9 +13,13 @@ interface IProps {
 }
 
 export const Button = styled(withClassNames(motion.button, ['button'])).attrs({ type: 'button' })<IProps>`
-padding: 0.0625rem 0.125rem;
+padding: 0.25rem 0.5rem;
 
 cursor: pointer;
+
+border-radius: 4px;
+
+transition-duration: 0.2s;
 
 color: ${({ t, theme: { $text: { primary, regular, secondary } } }) => {
     switch (t) {
@@ -41,4 +45,8 @@ border-width: ${({ t }) => {
     default: return undefined;
     }
   }};
+  
+  &:hover {
+    opacity: 0.8;
+  }
 `;

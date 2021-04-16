@@ -1,16 +1,16 @@
+import { ApiProperty } from '@nestjs/swagger';
 import {
   IsEmail,
   IsOptional,
   IsString,
 } from 'class-validator';
-import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateUserDto {
-  @ApiProperty()
+  @ApiProperty({ required: true })
   @IsString()
   username!: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: true })
   @IsString()
   password!: string;
 }
@@ -30,11 +30,11 @@ export class UpdateUserDto {
 export class FindUserDto extends CreateUserDto {}
 
 export class LoginUserDto {
-  @ApiProperty({ required: false })
+  @ApiProperty({ required: true })
   @IsString()
   username!: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: true })
   @IsString()
   password!: string;
 }

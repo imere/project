@@ -28,7 +28,7 @@
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.16",
-    "@swc/core": "^1.2.47",
+    "@swc/core": "^1.2.50",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@types/mini-css-extract-plugin": "^1.2.2",

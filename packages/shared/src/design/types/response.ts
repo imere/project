@@ -28,16 +28,16 @@ export function isErrorResponse(data?: unknown): data is ErrorResponse {
 }
 
 export class ResponseShape implements SuccessResponse, ErrorResponse {
-  @ApiProperty()
+  @ApiProperty({ description: 'status' })
   code!: number
 
-  @ApiProperty()
+  @ApiProperty({ description: '' })
   text?: string
 
-  @ApiProperty()
+  @ApiProperty({ description: 'data if success' })
   data?: unknown
 
-  @ApiProperty()
+  @ApiProperty({ description: 'error message' })
   msg?: string
 }
 
